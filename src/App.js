@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import SideBar from "./Components/SideBar";
 import TrendingPage from "./pages/TrendingPage";
 import UpComingPage from "./pages/UpcomingPage";
@@ -8,8 +8,7 @@ import WatchListPage from "./pages/WatchListPage";
 import SıgnUpPage from "./pages/SıgnUpPage";
 import LogInPage from "./pages/LogInPage";
 import GenresPage from "./pages/GenresPage";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { useEffect } from "react";
+import { SkeletonTheme } from "react-loading-skeleton";
 import DetailsPage from "./pages/DetailsPage";
 
 function App() {
@@ -18,6 +17,7 @@ function App() {
       <SideBar />
       <div className="lg:ml-[240px] w-full h-full">
         <SkeletonTheme>
+          {/* Main Router */}
           <Routes>
             <Route path="/" element={<GenresPage />} />
             <Route path="/genres" element={<GenresPage />} />
