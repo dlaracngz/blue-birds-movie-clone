@@ -1,38 +1,446 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.tekliPageNumber {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(16, 20, 30);
+  padding: 3rem;
+}
+.pageNumbers {
+  text-decoration: none;
+  display: flex;
+  background-color: rgb(16 20 30);
+  justify-content: center;
+  padding: 5rem 0px;
+}
+.pageNumbers-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 3px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  user-select: none;
+  border-radius: 50%;
+}
+.pageNumbers-active {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+}
+.active {
+  border: 2px solid blue;
+}
+.activeButton {
+  background-color: white;
+  color: black;
+}
+.div-area {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.div-area {
+  transition: all 0.3s ease-in;
+}
+.div-area:hover {
+  position: relative;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+/* @import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"; */
+
+.shadowx {
+  -webkit-box-shadow: inset 10px -104px 124px 9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 10px -104px 124px 9px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 10px -104px 124px 9px rgba(0, 0, 0, 0.75);
+}
+.tooltip {
+  position: relative;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.tooltip .top {
+  width: 130px;
+  transform: translate(-100%, -150%);
+  padding: 5px;
   color: white;
+  background-color: black;
+  font-weight: normal;
+  font-size: 13px;
+  border-radius: 8px;
+  position: absolute;
+  box-sizing: border-box;
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.tooltip:hover .top {
+  display: block;
+}
+.card-skeleton {
+  display: grid;
+  grid-template-columns: repeat(1fr, 5);
+  background-color: grey;
+  gap: 2.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 0rem 6rem;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+@media (max-width: 280px) {
+  #sideBar #logoPicture {
+    width: 0.5rem;
+  }
+  #sideBar #sideBarTitle {
+    font-size: 18px;
+  }
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 2rem;
+  }
+  #signUp {
+    padding: 1rem;
+  }
+  #logIn {
+    padding: 1rem;
+  }
+  .signUp-input {
+    width: 200px;
+  }
+  .login-input {
+    width: 200px;
+  }
+  #submit {
+    width: 200px;
+  }
+  .form-h2 {
+    font-size: 15px;
+  }
+  #film-overview {
+    padding: 0.75rem 2rem;
+  }
+  #filmOriginalTitle {
+    padding: 0.75rem;
+  }
+  #recommentedFilms {
+    font-size: 30px;
+  }
+  #listCategories {
+    padding: 0.75rem 0.5rem 0rem 0.5rem;
+  }
+  .pageNumbers {
+    display: none;
+  }
+  .tekliPageNumber {
+    padding: 1.5rem;
+  }
+  #listCast {
+    max-width: 150px;
+  }
+}
+@media (max-width: 350px) {
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 2rem;
+  }
+  #signUp {
+    padding: 1rem;
+  }
+  #logIn {
+    padding: 1rem;
+  }
+  .signUp-input {
+    width: 200px;
+  }
+  .login-input {
+    width: 200px;
+  }
+  #submit {
+    width: 200px;
+  }
+  .form-h2 {
+    font-size: 20px;
+  }
+  #film-overview {
+    padding: 0.75rem 2rem;
+  }
+  #filmOriginalTitle {
+    padding: 0.75rem;
+  }
+  #recommentedFilms {
+    font-size: 35px;
+  }
+  .pageNumbers {
+    display: none;
+  }
+  #listCast {
+    max-width: 270px;
+  }
+}
+@media (min-width: 350px) and (max-width: 450px) {
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0rem 3.5rem;
+  }
+  #searchBar {
+    width: 340px;
+  }
+  #listCategories {
+    padding: 40px 20px 0px 20px;
+  }
+  #signUp {
+    padding: 2.5rem;
+  }
+  #logIn {
+    padding: 2.5rem;
+  }
+  .signUp-input {
+    width: 240px;
+  }
+  .login-input {
+    width: 240px;
+  }
+  #submit {
+    width: 240px;
+  }
+  .form-h2 {
+    font-size: 25px;
+  }
+  #film-overview {
+    padding: 0.75rem 2rem;
+  }
+  #filmOriginalTitle {
+    padding: 0.75rem;
+  }
+  #recommentedFilms {
+    font-size: 35px;
+  }
+  #listCategories {
+    padding: 15px 20px 0px 20px;
+  }
+  .pageNumbers {
+    display: none;
+  }
+  #listCast {
+    max-width: 350px;
+  }
+}
+@media (min-width: 450px) and (max-width: 600px) {
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px 40px;
+  }
+  #searchBar {
+    width: 350px;
+  }
+  #listCategories {
+    padding: 40px 40px 0px 40px;
+  }
+  .signUp-input {
+    width: 270px;
+  }
+  .login-input {
+    width: 270px;
+  }
+  #submit {
+    width: 270px;
+  }
+  .form-h2 {
+    font-size: 30px;
+  }
+  #film-overview {
+    padding: 0.75rem 2rem;
+  }
+  #filmOriginalTitle {
+    padding: 1rem;
+    font-size: 40px;
+  }
+  #recommentedFilms {
+    font-size: 30px;
+  }
+  #listCategories {
+    padding: 15px 20px 0px 20px;
+  }
+  .pageNumbers {
+    display: none;
+  }
+  #listCast {
+    max-width: 450px;
+  }
+}
+@media (min-width: 600px) and (max-width: 819px) {
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px 40px;
+  }
+  #searchBar {
+    width: 500px;
+  }
+  #listCategories {
+    padding: 15px 20px 0px 20px;
+  }
+  #film-overview {
+    padding: 1rem 3rem;
+  }
+  #filmOriginalTitle {
+    padding: 1.75rem;
+  }
+  .pageNumbers {
+    display: none;
+  }
+  #listCast {
+    max-width: 600px;
+  }
+}
+@media (min-width: 820px) and (max-width: 1024px) {
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0px 40px;
+  }
+  #listCategories {
+    padding: 15px 20px 0px 20px;
+  }
+  #searchBar {
+    width: 700px;
+  }
+  .tekliPageNumber {
+    display: none;
+  }
+  .tekliPageNumber {
+    display: none;
+  }
+  #listCast {
+    max-width: 750px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1124px) {
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #signUp {
+    padding: 2.5rem;
+  }
+  #logIn {
+    padding: 2.5rem;
+  }
+  .signUp-input {
+    width: 300px;
+  }
+  .login-input {
+    width: 300px;
+  }
+  #submit {
+    width: 300px;
+  }
+  .form-h2 {
+    font-size: 30px;
+  }
+  .tekliPageNumber {
+    display: none;
+  }
+  #listCast {
+    max-width: 750px;
+  }
+}
+@media (min-width: 1124px) and (max-width: 1290px) {
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .tekliPageNumber {
+    display: none;
+  }
+  #listCast {
+    max-width: 750px;
+  }
+}
+@media (min-width: 1290px) and (max-width: 1700px) {
+  #listFilms {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .tekliPageNumber {
+    display: none;
+  }
+  #listCast {
+    max-width: 1000px;
+  }
+}
+@media (min-width: 1700px) {
+  .tekliPageNumber {
+    display: none;
+  }
+  #listCast {
+    max-width: 1400px;
+  }
+}
+#sideBar #menu {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0.75rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+}
+#sideBar li {
+  padding: 0.5rem;
+}
+.fa-times {
+  color: white;
+  font-size: 2rem;
+}
+.fa-bars {
+  color: white;
+  font-size: 2rem;
+}
+@media (max-width: 1023px) {
+  #sideBar #menu {
+    display: flex;
+  }
+  #sideBar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 390px;
+  }
+  #sideBar ul.open {
+    display: flex;
+    transition: all 0.5s ease;
+  }
+  #sideBar #logo {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    padding-left: 15px;
+  }
+  #sideBar #logo img {
+    width: 4rem;
+    padding-top: 0px;
+    padding-bottom: 15px;
+  }
+}
+::-webkit-scrollbar {
+  max-width: full;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-scrollbar-track {
+  background-color: red;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: green;
+  border-radius: 5px;
 }

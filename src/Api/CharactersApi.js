@@ -1,0 +1,19 @@
+const getOptions = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNzI5ZTczOTk3ODM1YmQ2ZTIzNjkyMTdlOGYxMDJiMSIsInN1YiI6IjYzMmQ3MjM0YWJkYWZjMDA4MWE5NDViNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PHWS0NPFARxPBs91PU1lnKjN9NUKz_tRTSjSEFP6eX4",
+  },
+};
+
+const fetchCharacters = async (movieId) => {
+  return await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`,
+    getOptions
+  );
+};
+
+// 'https://api.themoviedb.org/3/movie/569094/credits?language=en-US'
+
+export default fetchCharacters;
